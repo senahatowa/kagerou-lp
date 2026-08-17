@@ -170,6 +170,14 @@ h3{font-size:24px;line-height:1.5}
 .voice-card b{color:#dc8079;font:800 12px/1.5 'Noto Sans JP',sans-serif;letter-spacing:.06em}
 .v-main{font-size:15px;font-weight:800;line-height:1.65;margin-top:7px}
 .v-sub{font:500 12px/1.8 'Noto Sans JP',sans-serif;color:#b9b0a5;margin-top:8px}
+.voice-newcomers{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:24px}
+.voice-newcomers figure{position:relative;overflow:hidden;aspect-ratio:4/3;background:#151312;border:1px solid #2e2925}
+.voice-newcomers img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.voice-newcomers figure:last-child img{object-position:center 43%}
+.voice-newcomers figcaption{position:absolute;inset:auto 0 0;padding:30px 12px 10px;background:linear-gradient(transparent,#0c0b0ae8);font:800 12px/1.4 'Noto Sans JP',sans-serif;color:#fff;letter-spacing:.05em}
+.voice-stories{display:grid;gap:18px;margin-top:18px}
+.voice-story{overflow:hidden;aspect-ratio:1/1;background:#0c0b0a;border:1px solid #3a3430;box-shadow:0 18px 34px #0005}
+.voice-story img{display:block;width:100%;height:auto}
 
 /* instructors */
 .instructors{margin-top:34px;display:grid;gap:40px}
@@ -324,6 +332,7 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
  .ama-head{padding:0 24px 26px}.ama-stage{padding:0 16px}.ama-images{height:400px;grid-template-columns:.66fr 1.34fr}
  .ama-label{left:7px;right:7px;bottom:9px;padding:8px}.ama-label b{font-size:10px}.ama-label.after-label b{font-size:13px}
  .ama-message{padding:28px 24px 0}
+ .voice-stories{margin-left:-12px;margin-right:-12px;gap:12px}
  .voice{grid-template-columns:84px 1fr;gap:14px;padding:18px}.voice img{width:84px;height:106px}.voice blockquote{font-size:16px}
  .instructors{grid-template-columns:1fr}.instructor-face img{height:330px}.portfolio img{height:118px}
  .money-stats b{font-size:15px}.money-stats small{white-space:nowrap;font-size:8px}
@@ -426,8 +435,18 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
     <h2><span class="seg">未経験から、</span><br><span class="red"><span class="seg">「彫り師として</span><span class="seg">生きていく」</span></span><span class="seg">まで。</span></h2>
     <div class="voice-cards">
       <article class="voice-card"><img src="images/voice_yamamoto.jpg" alt="受講生 山本結菜さん"><div><b>山本 結菜さん</b><p class="v-main">5回の授業で、<br>本気の自信が<br>つきました。</p><p class="v-sub">「全くの未経験から、ゼロから丁寧に教えてもらえました」</p></div></article>
-      <article class="voice-card flip"><img src="images/voice_yura.jpg" alt="受講生 道上ゆらさん"><div><b>道上 ゆらさん</b><p class="v-main">独学では学べない、<br>リアルを<br>経験できました。</p><p class="v-sub">「今ではKAGEROUに所属し、プロとしてお客様の肌に向き合っています」</p></div></article>
+      <article class="voice-card flip"><img src="images/voice_takahashi_portrait.webp" alt="受講生 高橋七凪海さん"><div><b>高橋 七凪海さん</b><p class="v-main">「ここで学べて<br>良かった」と<br>心から思えました。</p><p class="v-sub">「衛生管理の基本から技術まで、理由も含めて丁寧に学べました」</p></div></article>
       <article class="voice-card"><img src="images/voice_kobayashi.jpg" alt="受講生 小林結喜さん"><div><b>小林 結喜さん</b><p class="v-main">彫り師として<br>生きていく、<br>覚悟が身につきました。</p><p class="v-sub">「技術だけでなく、考え方や姿勢まで学べました」</p></div></article>
+    </div>
+    <div class="voice-newcomers">
+      <figure><img src="images/voice_iwabe_portrait.webp" alt="受講生 岩部成さん" loading="lazy" decoding="async"><figcaption>岩部 成さん</figcaption></figure>
+      <figure><img src="images/voice_kasai_portrait.webp" alt="受講生 葛西大成さん" loading="lazy" decoding="async"><figcaption>葛西 大成さん</figcaption></figure>
+    </div>
+    <div class="voice-stories" aria-label="受講生の詳しい声">
+      <figure class="voice-story"><img src="images/voice_takahashi.webp" alt="受講生 高橋七凪海さんの声『ここで学べて良かったと心から思える環境でした』" loading="lazy" decoding="async"></figure>
+      <figure class="voice-story"><img src="images/voice_iwabe.webp" alt="受講生 岩部成さんの声『実践練習メインで独学では学べないリアルを経験することができました』" loading="lazy" decoding="async"></figure>
+      <figure class="voice-story"><img src="images/voice_kasai.webp" alt="受講生 葛西大成さんの声『絵を描くことが好きで仕事に生かしたかった』" loading="lazy" decoding="async"></figure>
+      <figure class="voice-story"><img src="images/voice_sakogawa_full.webp" alt="受講生 佐子川敬さんの声『年齢を理由に諦めなくてよかったです』" loading="lazy" decoding="async"></figure>
     </div>
   </section>
 
