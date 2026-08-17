@@ -163,12 +163,13 @@ h3{font-size:24px;line-height:1.5}
 .voices{background:var(--black);color:#f4f0ea;padding-top:72px;padding-bottom:78px}
 .voices .lead{max-width:560px}
 .voice-feature{display:grid;grid-template-columns:.9fr 1.1fr;margin-top:38px;overflow:hidden;background:#151312;border-top:1px solid #3a3430;border-bottom:1px solid #3a3430}
-.voice-feature__photo{position:relative;min-height:520px;overflow:hidden;background:#211d1a}
+.voice-feature__photo{position:relative;min-height:420px;overflow:hidden;background:#211d1a}
 .voice-feature__photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0c0b0ad9 0%,transparent 52%)}
 .voice-feature__photo img{height:100%;object-fit:cover;object-position:56% center}
 .voice-now{position:absolute;z-index:1;left:20px;right:18px;bottom:20px;padding-left:13px;border-left:3px solid var(--red2);font:800 10px/1.45 'Noto Sans JP',sans-serif;letter-spacing:.12em;color:#d7cec4}
 .voice-now b{display:block;margin-top:3px;color:#fff;font-size:18px;letter-spacing:.03em}
 .voice-feature__copy{display:flex;flex-direction:column;padding:38px 34px 30px}
+.voice-feature>.voice-full{grid-column:1/-1;margin:0;padding:28px 34px 32px;border-top:1px solid #332e29}
 .voice-no{font:800 10px/1.4 'Noto Sans JP',sans-serif;letter-spacing:.2em;color:#8d847a}
 .voice-person{margin-top:10px;font:800 12px/1.5 'Noto Sans JP',sans-serif;letter-spacing:.08em;color:#dc8079}
 .voice-feature h3{margin-top:12px;font-size:30px;line-height:1.55}
@@ -181,16 +182,23 @@ h3{font-size:24px;line-height:1.5}
 .voice-shift i{font-style:normal;color:#dc8079;text-align:center;font-size:20px}
 .voice-quote{margin-top:20px;padding-left:16px;border-left:2px solid #6e332e;font-size:17px;font-weight:700;line-height:1.9;color:#f4f0ea}
 .voice-full{margin-top:22px;padding-top:20px;border-top:1px solid #332e29}
-.voice-full:before{content:"受講生の声";display:block;margin-bottom:12px;color:#d9968f;font:800 10px/1.5 'Noto Sans JP',sans-serif;letter-spacing:.1em}
-.voice-full p{color:#cfc7bc;font:500 12px/2 'Noto Sans JP',sans-serif;word-break:auto-phrase;line-break:strict;overflow-wrap:normal;text-wrap:pretty}
+.voice-full:before{content:"本人コメント";display:block;margin-bottom:14px;color:#d9968f;font:800 11px/1.5 'Noto Sans JP',sans-serif;letter-spacing:.1em}
+.voice-full p{color:#ddd6cc;font:500 15px/2.05 'Noto Sans JP',sans-serif;word-break:auto-phrase;line-break:strict;overflow-wrap:normal;text-wrap:pretty}
 .voice-support{display:grid;grid-template-columns:1fr;gap:24px;margin-top:34px}
-.voice-case{display:grid;grid-template-columns:minmax(280px,34%) 1fr;overflow:hidden;background:#151312;border:1px solid #332e29}
-.voice-case figure{position:relative;overflow:hidden;background:#211d1a}
+.voice-case{display:grid;grid-template-columns:240px 1fr;overflow:hidden;background:#151312;border:1px solid #332e29}
+.voice-case figure{position:relative;height:290px;overflow:hidden;background:#211d1a}
 .voice-case img{width:100%;height:100%;object-fit:cover}
 .voice-case--safety img{object-position:50% 28%}
-.voice-case__copy{padding:32px 34px 30px}
+.voice-case__copy{padding:28px 32px 26px}
+.voice-case>.voice-full{grid-column:1/-1;margin:0;padding:26px 32px 30px;border-top:1px solid #332e29}
 .voice-tag{font:800 10px/1.5 'Noto Sans JP',sans-serif;letter-spacing:.1em;color:#d9968f}
-.voice-case h3{margin-top:8px;font-size:23px;line-height:1.55}
+.voice-case h3{margin-top:8px;font-size:27px;line-height:1.5}
+.voice-highlights{margin-top:22px;border-top:1px solid #332e29;border-bottom:1px solid #332e29}
+.voice-highlights div{display:grid;grid-template-columns:84px 1fr;align-items:start;gap:12px;padding:11px 0}
+.voice-highlights div+div{border-top:1px solid #292521}
+.voice-highlights small{padding-top:4px;color:#8d847a;font:800 9px/1.5 'Noto Sans JP',sans-serif;letter-spacing:.1em}
+.voice-highlights b{color:#f4f0ea;font-size:15px;line-height:1.65}
+.voice-highlights .after small,.voice-highlights .after b{color:#e28a82}
 .voice-case .voice-quote{font-size:14px;line-height:1.85;margin-top:14px}
 .voice-case--craft img{object-position:50% 30%}
 .voice-more{margin-top:42px;padding-top:26px;border-top:1px solid #332e29}
@@ -367,12 +375,16 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
  .voice-shift b{font-size:12px}
  .voice-quote{font-size:15px}
  .voice-support{grid-template-columns:1fr;gap:14px;margin-top:22px}
- .voice-case{display:block}
- .voice-case figure{aspect-ratio:16/11}
+ .voice-case{grid-template-columns:1fr}
+ .voice-case figure{height:auto;aspect-ratio:16/9}
  .voice-case--craft img{object-position:50% 30%}
  .voice-case__copy{padding:24px 22px 22px}
+ .voice-case>.voice-full,.voice-feature>.voice-full{grid-column:1;padding:22px;margin:0}
  .voice-full{margin-top:18px;padding-top:16px}
- .voice-full p{font-size:12px;line-height:1.95}
+ .voice-full p{font-size:15px;line-height:2}
+ .voice-case h3{font-size:25px}
+ .voice-highlights div{grid-template-columns:74px 1fr;gap:10px}
+ .voice-highlights b{font-size:14px}
  .voice-more{margin-top:34px}
  .voice-more__head{display:block}
  .voice-more__head p{text-align:left;margin-top:5px}
@@ -496,8 +508,8 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
           <i>→</i>
           <div class="after"><small>受講後</small><b>KAGEROU所属<br>プロとして活動</b></div>
         </div>
-        <div class="voice-full"><p><span class="seg">昔からアニメや漫画の絵を描くのが好きで、</span><span class="seg">いつか彫り師になりたいと夢見ていました。</span><span class="seg">でも、何から始めればいいか分からず不安でした。</span><br><br><span class="seg">ライン・塗り・ぼかしといった</span><span class="seg">タトゥーの基礎技術を</span><span class="seg">徹底的に教えてもらえただけでなく、</span><span class="seg">授業外でもデザインの添削や</span><span class="seg">アドバイスをいただけて、</span><span class="seg">本当に実力がついたと感じています。</span><br><br><span class="seg">今ではKAGEROUに所属し、</span><span class="seg">プロのアーティストとして</span><span class="seg">お客様の肌に向き合う毎日を過ごしています。</span><span class="seg">あのとき一歩踏み出して、</span><span class="seg">本当によかったです。</span></p></div>
       </div>
+      <div class="voice-full"><p><span class="seg">昔からアニメや漫画の絵を描くのが好きで、</span><span class="seg">いつか彫り師になりたいと夢見ていました。</span><span class="seg">でも、何から始めればいいか分からず不安でした。</span><br><br><span class="seg">ライン・塗り・ぼかしといった</span><span class="seg">タトゥーの基礎技術を</span><span class="seg">徹底的に教えてもらえただけでなく、</span><span class="seg">授業外でもデザインの添削や</span><span class="seg">アドバイスをいただけて、</span><span class="seg">本当に実力がついたと感じています。</span><br><br><span class="seg">今ではKAGEROUに所属し、</span><span class="seg">プロのアーティストとして</span><span class="seg">お客様の肌に向き合う毎日を過ごしています。</span><span class="seg">あのとき一歩踏み出して、</span><span class="seg">本当によかったです。</span></p></div>
     </article>
 
     <div class="voice-support">
@@ -507,8 +519,9 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
           <p class="voice-tag">衛生面への不安から</p>
           <p class="voice-person">高橋 七凪海さん</p>
           <h3>知識だけでなく、<br><span class="red">「なぜ」まで学べた。</span></h3>
-          <div class="voice-full"><p><span class="seg">以前は別のスタジオで見習いをしていましたが、</span><span class="seg">衛生面や指導環境に</span><span class="seg">不安を感じることがありました。</span><br><br><span class="seg">KAGEROUでは、</span><span class="seg">衛生管理の基本から技術まで、</span><span class="seg">一つひとつ丁寧に</span><span class="seg">理由も含めて教えていただけます。</span><span class="seg">知識だけでなく、</span><span class="seg">「なぜそうするのか」を理解しながら</span><span class="seg">学べる環境なので、</span><span class="seg">毎回納得しながら成長できています。</span><br><br><span class="seg">また、ここで尊敬できる</span><span class="seg">アーティストの皆さんに出会えたことが、</span><span class="seg">私にとって一番大きな財産です。</span><span class="seg">技術だけでなく、</span><span class="seg">お客様と向き合う姿勢や、</span><span class="seg">「タトゥーはお客様の体に一生残るもの」</span><span class="seg">という責任感を間近で見て、</span><span class="seg">その重みを改めて実感しました。</span><br><br><span class="seg">何より、アーティストの皆さんが本当に温かく、</span><span class="seg">一人ひとりに愛を持って</span><span class="seg">指導してくださいます。</span><span class="seg">分からないことも相談しやすく、</span><span class="seg">安心して学べる環境だからこそ、</span><span class="seg">「ここで学べて良かった」と</span><span class="seg">心から思える環境でした。</span></p></div>
+          <div class="voice-highlights" aria-label="高橋さんの受講前後"><div><small>始める前</small><b>衛生面と指導環境に不安</b></div><div><small>学んだこと</small><b>衛生管理を、理由から理解</b></div><div class="after"><small>受講後</small><b>毎回、納得しながら成長</b></div></div>
         </div>
+        <div class="voice-full"><p><span class="seg">以前は別のスタジオで見習いをしていましたが、</span><span class="seg">衛生面や指導環境に</span><span class="seg">不安を感じることがありました。</span><br><br><span class="seg">KAGEROUでは、</span><span class="seg">衛生管理の基本から技術まで、</span><span class="seg">一つひとつ丁寧に</span><span class="seg">理由も含めて教えていただけます。</span><span class="seg">知識だけでなく、</span><span class="seg">「なぜそうするのか」を理解しながら</span><span class="seg">学べる環境なので、</span><span class="seg">毎回納得しながら成長できています。</span><br><br><span class="seg">また、ここで尊敬できる</span><span class="seg">アーティストの皆さんに出会えたことが、</span><span class="seg">私にとって一番大きな財産です。</span><span class="seg">技術だけでなく、</span><span class="seg">お客様と向き合う姿勢や、</span><span class="seg">「タトゥーはお客様の体に一生残るもの」</span><span class="seg">という責任感を間近で見て、</span><span class="seg">その重みを改めて実感しました。</span><br><br><span class="seg">何より、アーティストの皆さんが本当に温かく、</span><span class="seg">一人ひとりに愛を持って</span><span class="seg">指導してくださいます。</span><span class="seg">分からないことも相談しやすく、</span><span class="seg">安心して学べる環境だからこそ、</span><span class="seg">「ここで学べて良かった」と</span><span class="seg">心から思える環境でした。</span></p></div>
       </article>
 
       <article class="voice-case voice-case--craft">
@@ -517,8 +530,9 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
           <p class="voice-tag">絵を仕事にしたくて</p>
           <p class="voice-person">葛西 大成さん</p>
           <h3>描く力と、<br><span class="red">彫る力は別物だった。</span></h3>
-          <div class="voice-full"><p><span class="seg">昔から絵を描くことが好きで、</span><span class="seg">「いつか自分の絵を活かせる仕事がしたい」</span><span class="seg">と思っていました。</span><span class="seg">そんな中で興味を持ったのが、</span><span class="seg">自分のデザインを人の肌に残すことができる</span><span class="seg">彫り師という仕事でした。</span><br><br><span class="seg">最初は絵が描けても、</span><span class="seg">それをタトゥーとして表現するために</span><span class="seg">何が必要なのか分からず不安でした。</span><span class="seg">スクールではライン・塗り・ぼかしなどの</span><span class="seg">基礎から実践的に学ぶことができ、</span><span class="seg">絵を描く技術とタトゥーの技術は</span><span class="seg">全く別物だということも実感しました。</span><br><br><span class="seg">講師の方から直接アドバイスをもらいながら</span><span class="seg">何度も練習することで、</span><span class="seg">少しずつ自分のデザインを</span><span class="seg">タトゥーとして形にする力が</span><span class="seg">身についていきました。</span><br><br><span class="seg">好きだった「絵を描くこと」を、</span><span class="seg">ただの趣味で終わらせず</span><span class="seg">仕事につなげるための一歩を</span><span class="seg">踏み出せたことが、本当に嬉しいです。</span></p></div>
+          <div class="voice-highlights" aria-label="葛西さんの受講前後"><div><small>始める前</small><b>絵をタトゥーへ変える方法が不明</b></div><div><small>学んだこと</small><b>ライン・塗り・ぼかしを実践</b></div><div class="after"><small>受講後</small><b>自分のデザインを形にできる</b></div></div>
         </div>
+        <div class="voice-full"><p><span class="seg">昔から絵を描くことが好きで、</span><span class="seg">「いつか自分の絵を活かせる仕事がしたい」</span><span class="seg">と思っていました。</span><span class="seg">そんな中で興味を持ったのが、</span><span class="seg">自分のデザインを人の肌に残すことができる</span><span class="seg">彫り師という仕事でした。</span><br><br><span class="seg">最初は絵が描けても、</span><span class="seg">それをタトゥーとして表現するために</span><span class="seg">何が必要なのか分からず不安でした。</span><span class="seg">スクールではライン・塗り・ぼかしなどの</span><span class="seg">基礎から実践的に学ぶことができ、</span><span class="seg">絵を描く技術とタトゥーの技術は</span><span class="seg">全く別物だということも実感しました。</span><br><br><span class="seg">講師の方から直接アドバイスをもらいながら</span><span class="seg">何度も練習することで、</span><span class="seg">少しずつ自分のデザインを</span><span class="seg">タトゥーとして形にする力が</span><span class="seg">身についていきました。</span><br><br><span class="seg">好きだった「絵を描くこと」を、</span><span class="seg">ただの趣味で終わらせず</span><span class="seg">仕事につなげるための一歩を</span><span class="seg">踏み出せたことが、本当に嬉しいです。</span></p></div>
       </article>
     </div>
 
