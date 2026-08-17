@@ -155,10 +155,16 @@ h3{font-size:24px;line-height:1.5}
 .ba-after .ba-tag{background:var(--red2);box-shadow:0 8px 18px #c2484044}
 .ba figcaption small{display:block;margin-top:8px;font:800 14px/1.6 'Noto Sans JP',sans-serif;color:var(--ink)}
 .ba-before figcaption small{color:var(--muted);font-weight:700}
-.ama-route{max-width:470px;margin:22px auto 0;text-align:left;font:800 18px/1.55 'Noto Sans JP',sans-serif;color:var(--ink)}
-.ama-route>.seg{display:block;padding:7px 0}
-.ama-route>.seg:first-child{padding-left:34px}
-.ama-route em{display:inline-block;width:26px;font-style:normal;color:var(--red);font-size:21px;margin-right:8px;text-align:center}
+.ama-route{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr) 28px minmax(0,1fr);align-items:center;margin-top:24px;color:var(--ink)}
+.ama-route div{align-self:stretch;padding:12px 10px 11px;border-top:2px solid #c9bcac}
+.ama-route small{display:block;color:#9f3d37;font:800 9px/1.4 'Noto Sans JP',sans-serif;letter-spacing:.16em}
+.ama-route b{display:block;margin-top:5px;font:800 14px/1.55 'Noto Sans JP',sans-serif}
+.ama-route b span{display:block}
+.ama-route .now{border-color:var(--red)}
+.ama-route .now b{color:var(--red)}
+.ama-route i{position:relative;display:block;width:20px;height:12px;margin:auto}
+.ama-route i:before{content:"";position:absolute;left:1px;right:6px;top:5px;height:2px;background:var(--red)}
+.ama-route i:after{content:"";position:absolute;right:2px;top:2px;width:6px;height:6px;border-top:2px solid var(--red);border-right:2px solid var(--red);transform:rotate(45deg)}
 .ama-message{padding:30px 46px 0}
 .ama-message h3{font-size:24px}
 .ama-message p{margin-top:12px;color:var(--muted)}
@@ -174,7 +180,7 @@ h3{font-size:24px;line-height:1.5}
 .voice-feature__copy{display:flex;flex-direction:column;padding:38px 34px 30px}
 .voice-feature>.voice-full{grid-column:1/-1;margin:0;padding:28px 34px 32px;border-top:1px solid #332e29}
 .voice-no{font:800 10px/1.4 'Noto Sans JP',sans-serif;letter-spacing:.2em;color:#8d847a}
-.voice-person{margin-top:10px;font:800 12px/1.5 'Noto Sans JP',sans-serif;letter-spacing:.08em;color:#dc8079}
+.voice-person{margin-top:10px;font:800 12px/1.5 'Noto Sans JP',sans-serif;letter-spacing:.08em;color:#cf8b85}
 .voice-feature h3{margin-top:12px;font-size:30px;line-height:1.55}
 .voice-shift{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr);align-items:center;column-gap:10px;margin-top:24px;padding:16px 0;border-top:1px solid #332e29;border-bottom:1px solid #332e29}
 .voice-shift div{min-width:0}
@@ -196,8 +202,9 @@ h3{font-size:24px;line-height:1.5}
 .voice-case--safety img{object-position:50% 28%}
 .voice-case__copy{padding:20px 28px 18px}
 .voice-case>.voice-full{grid-column:1/-1;margin:0;padding:26px 32px 30px;border-top:1px solid #332e29}
-.voice-tag{font:800 10px/1.5 'Noto Sans JP',sans-serif;letter-spacing:.1em;color:#d9968f}
+.voice-tag{font:800 10px/1.5 'Noto Sans JP',sans-serif;letter-spacing:.1em;color:#a69b91}
 .voice-case h3{margin-top:6px;font-size:25px;line-height:1.45}
+.voice-case h3,.voice-case h3 .red{color:#f4f0ea}
 .voice-highlights{margin-top:14px;border-top:1px solid #332e29;border-bottom:1px solid #332e29}
 .voice-highlights div{display:grid;grid-template-columns:84px 1fr;align-items:start;gap:12px;padding:7px 0}
 .voice-highlights div+div{border-top:1px solid #292521}
@@ -231,7 +238,7 @@ h3{font-size:24px;line-height:1.5}
 /* money/paths */
 .money-band{margin-top:30px;background:var(--black);color:#fff;padding:30px 28px}
 .money-band p{font-size:14px;color:#cfc7bc;line-height:1.9}
-.money-stats{margin-top:26px;text-align:center}
+.money-stats{margin-top:0;text-align:center}
 .money-stats .hero em{display:block;font-style:normal;color:#dc8079;font:800 12px/1.5 'Noto Sans JP',sans-serif;letter-spacing:.18em}
 .money-stats .hero b{display:block;color:#fff;font-size:54px;line-height:1.1;letter-spacing:-.02em;margin-top:4px}
 .money-stats .hero b i{font-style:normal;font-size:20px;margin:0 3px}
@@ -261,6 +268,9 @@ h3{font-size:24px;line-height:1.5}
 .career-photo img{width:min(100%,620px);height:auto;object-fit:cover}
 .career-copy{padding:40px 46px 56px}
 .career-copy h2{font-size:34px}
+.career .kicker{color:#eee7de}
+.career .kicker:before{background:#c95f57}
+.career .voice-person{color:#f0a19a}
 .career-copy .setup{color:#cfc7bc;margin-top:18px;line-height:2}
 .career-copy .setup strong{color:#fff}
 .kagerou-proof{margin-top:24px;padding:20px;border:1px solid #332e29;border-left:3px solid var(--red2);font-size:15px;line-height:1.9}
@@ -371,9 +381,6 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
  .support-grid span{font-size:13px;line-height:1.5}
  .ama-head{padding:0 24px 26px}.ama-stage{padding:0 16px}.ama-images{height:400px;grid-template-columns:.66fr 1.34fr}
  .ama-label{left:7px;right:7px;bottom:9px;padding:8px}.ama-label b{font-size:10px}.ama-label.after-label b{font-size:13px}
- .ama-route{max-width:330px;margin-top:18px;font-size:16px}
- .ama-route>.seg:first-child{padding-left:30px}
- .ama-route em{width:22px;font-size:19px;margin-right:6px}
  .ama-message{padding:28px 24px 0}
  .voices{padding:54px 24px 58px}
  .voice-feature{grid-template-columns:1fr;margin-top:30px}
@@ -415,6 +422,13 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
  .answer{grid-template-columns:42px 1fr}.answer b{font-size:17px}
  .gift{grid-template-columns:105px 1fr;padding:24px 18px;gap:18px}.gift h3{font-size:20px}.gift .pages{font-size:32px;white-space:nowrap}
  .final-benefits{gap:4px}.final-benefits div{padding:12px 3px}.final-benefits small{font-size:9px}
+}
+@media(max-width:480px){
+ .ama-route{display:flex;flex-direction:column;margin-top:18px}
+ .ama-route div{display:grid;grid-template-columns:34px 1fr;align-items:center;width:100%;padding:10px 0;border-top:1px solid #d8cebf}
+ .ama-route small{padding-left:4px;font-size:9px}
+ .ama-route b{margin:0;font-size:15px}
+ .ama-route i{width:12px;height:18px;margin:0 0 0 10px;transform:rotate(90deg)}
 }
 @media(min-width:900px){
  body::before{content:"";position:fixed;inset:-48px;background:url(images/quan_w1.jpg) center 30%/cover;filter:blur(20px) saturate(.8) brightness(.32);z-index:0}
@@ -497,7 +511,7 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
         <span class="ba-arrow">→</span>
         <figure class="ba-after"><img src="images/ama2.webp" alt="現在のAmaさん（KAGEROU池袋店所属）"><figcaption><span class="ba-tag">AFTER</span><small>KAGEROU池袋店<br>所属アーティスト</small></figcaption></figure>
       </div>
-      <p class="ama-route"><span class="seg">教師を続けながら受講</span><br><span class="seg"><em>→</em>作品を重ねて所属審査</span><br><span class="seg"><em>→</em>現在、池袋店アーティスト</span></p>
+      <div class="ama-route" aria-label="Amaさんの受講後までの経路"><div><small>STEP 01</small><b><span>教師を続けながら</span><span>受講</span></b></div><i aria-hidden="true"></i><div><small>STEP 02</small><b><span>作品を重ねて</span><span>所属審査</span></b></div><i aria-hidden="true"></i><div class="now"><small>NOW</small><b><span>現在、池袋店</span><span>アーティスト</span></b></div></div>
     </div>
     <div class="ama-message"><h3><span class="seg">仕事を辞めてから、</span><br><span class="seg">始めたのでは</span><span class="seg">ありません。</span></h3><p><strong>続けながら学び、所属審査を突破。</strong><br>Amaさんは「受講生の感想」ではなく、今から目指せる未来を先に歩く先輩です。</p>
     </div>
@@ -533,7 +547,7 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
           <p class="voice-tag">衛生面への不安から</p>
           <p class="voice-person">高橋 七凪海さん</p>
           <h3>知識だけでなく、<br><span class="red">「なぜ」まで学べた。</span></h3>
-          <div class="voice-highlights" aria-label="高橋さんの受講前後"><div><small>始める前</small><b>衛生面と指導環境に不安</b></div><div><small>学んだこと</small><b>衛生管理を、理由から理解</b></div><div class="after"><small>受講後</small><b>毎回、納得しながら成長</b></div></div>
+          <div class="voice-highlights" aria-label="高橋さんの受講前後"><div><small>始める前</small><b>衛生面と指導環境に不安</b></div><div><small>学んだこと</small><b><span class="seg">衛生管理を、</span><span class="seg">理由から理解</span></b></div><div class="after"><small>受講後</small><b>毎回、納得しながら成長</b></div></div>
         </div>
         <div class="voice-full"><p><span class="seg">以前は別のスタジオで見習いをしていましたが、</span><span class="seg">衛生面や指導環境に</span><span class="seg">不安を感じることがありました。</span><br><br><span class="seg">KAGEROUでは、</span><span class="seg">衛生管理の基本から技術まで、</span><span class="seg">一つひとつ丁寧に</span><span class="seg">理由も含めて教えていただけます。</span><span class="seg">知識だけでなく、</span><span class="seg">「なぜそうするのか」を理解しながら</span><span class="seg">学べる環境なので、</span><span class="seg">毎回納得しながら成長できています。</span><br><br><span class="seg">また、ここで尊敬できる</span><span class="seg">アーティストの皆さんに出会えたことが、</span><span class="seg">私にとって一番大きな財産です。</span><span class="seg">技術だけでなく、</span><span class="seg">お客様と向き合う姿勢や、</span><span class="seg">「タトゥーはお客様の体に一生残るもの」</span><span class="seg">という責任感を間近で見て、</span><span class="seg">その重みを改めて実感しました。</span><br><br><span class="seg">何より、アーティストの皆さんが本当に温かく、</span><span class="seg">一人ひとりに愛を持って</span><span class="seg">指導してくださいます。</span><span class="seg">分からないことも相談しやすく、</span><span class="seg">安心して学べる環境だからこそ、</span><span class="seg">「ここで学べて良かった」と</span><span class="seg">心から思える環境でした。</span></p></div>
       </article>
@@ -544,7 +558,7 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
           <p class="voice-tag">絵を仕事にしたくて</p>
           <p class="voice-person">葛西 大成さん</p>
           <h3>描く力と、<br><span class="red">彫る力は別物だった。</span></h3>
-          <div class="voice-highlights" aria-label="葛西さんの受講前後"><div><small>始める前</small><b>絵をタトゥーへ変える方法が不明</b></div><div><small>学んだこと</small><b>ライン・塗り・ぼかしを実践</b></div><div class="after"><small>受講後</small><b>自分のデザインを形にできる</b></div></div>
+          <div class="voice-highlights" aria-label="葛西さんの受講前後"><div><small>始める前</small><b><span class="seg">絵をタトゥーへ</span><span class="seg">変える方法が不明</span></b></div><div><small>学んだこと</small><b>ライン・塗り・ぼかしを実践</b></div><div class="after"><small>受講後</small><b><span class="seg">自分のデザインを</span><span class="seg">形にできる</span></b></div></div>
         </div>
         <div class="voice-full"><p><span class="seg">昔から絵を描くことが好きで、</span><span class="seg">「いつか自分の絵を活かせる仕事がしたい」</span><span class="seg">と思っていました。</span><span class="seg">そんな中で興味を持ったのが、</span><span class="seg">自分のデザインを人の肌に残すことができる</span><span class="seg">彫り師という仕事でした。</span><br><br><span class="seg">最初は絵が描けても、</span><span class="seg">それをタトゥーとして表現するために</span><span class="seg">何が必要なのか分からず不安でした。</span><span class="seg">スクールではライン・塗り・ぼかしなどの</span><span class="seg">基礎から実践的に学ぶことができ、</span><span class="seg">絵を描く技術とタトゥーの技術は</span><span class="seg">全く別物だということも実感しました。</span><br><br><span class="seg">講師の方から直接アドバイスをもらいながら</span><span class="seg">何度も練習することで、</span><span class="seg">少しずつ自分のデザインを</span><span class="seg">タトゥーとして形にする力が</span><span class="seg">身についていきました。</span><br><br><span class="seg">好きだった「絵を描くこと」を、</span><span class="seg">ただの趣味で終わらせず</span><span class="seg">仕事につなげるための一歩を</span><span class="seg">踏み出せたことが、本当に嬉しいです。</span></p></div>
       </article>
@@ -560,7 +574,7 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
   </section>
 
   <section class="section">
-    <p class="kicker">講師</p><h2><span class="seg">教えるのは、</span><br><span class="red"><span class="seg">今も指名を受ける</span><span class="seg">2人。</span></span></h2>
+    <p class="kicker">講師</p><h2><span class="seg">教えるのは、</span><br><span class="red"><span class="seg">現役のプロの彫り師。</span></span></h2><p class="lead"><span class="seg">新宿・日本橋の現場で、</span><span class="seg">今も指名を受ける2人です。</span></p>
     <div class="instructors">
       <article class="instructor">
         <img class="instructor-card" src="images/mem2.jpg" alt="講師 Mako（新宿店）">
@@ -577,8 +591,7 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
 
   <section class="section white">
     <p class="kicker">収入と卒業後</p><h2><span class="seg">夢の話だけでなく、</span><br><span class="red"><span class="seg">仕事としての現実</span></span><span class="seg">も聞けます。</span></h2>
-    <div class="money-band"><p><span class="seg">売上と手取りは違います。</span><br><span class="seg">都合のいい数字だけで、</span><span class="seg">決めさせません。</span></p><div class="money-stats"><div class="hero"><em>所属彫師の月売上</em><b><i>平均</i>70万<i>円</i></b><small>所属後の目安</small></div><div class="money-sides"><div><b>初月25万</b><small>所属者の実例</small></div><div><b>200万近く</b><small>トップの実例</small></div></div></div>
-    <p class="money-note">※KAGEROUスタジオ所属彫師の売上実績です（受講の成果を保証するものではありません）。売上であり手取りではありません。</p></div>
+    <div class="money-band"><div class="money-stats"><div class="hero"><em>所属彫師の月収・手取り</em><b><i>平均</i>70万<i>円</i></b><small>所属後の収入目安</small></div><div class="money-sides"><div><b>初月25万</b><small>所属者の手取り実例</small></div><div><b>200万近く</b><small>トップの月売上実例</small></div></div></div></div>
     <h3 class="paths-head"><span class="seg">卒業後は、</span><span class="red"><span class="seg">4つの道。</span></span></h3><div class="paths"><article class="path main"><small>道 01｜審査制</small><b>KAGEROU所属</b><p>自分でゼロから場所と信用を作らず、現役スタジオの看板の下でプロとして進む。</p><div class="path-photo"><img src="images/path-studio.jpg" alt="KAGEROUの現役スタジオ"></div></article><div class="paths-sub"><article class="path"><small>道 02</small><b>独立・開業</b><p>自分のスタジオを持つ。</p></article><article class="path"><small>道 03</small><b>他店に応募</b><p>作品集を武器にする。</p></article><article class="path"><small>道 04</small><b>複業・ゲスト</b><p>仕事を続けながら彫る。</p></article></div></div>
   </section>
 
@@ -634,7 +647,7 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
     <details><summary>仕事を続けながら学べますか？</summary><p>可能です。Amaさんも高校教師と両立して受講しました。辞めずに通う場合の現実的な日程を、説明会で一緒に組めます。</p></details>
     <details><summary>独学じゃ、だめですか？</summary><p>独学でも、なれます。ただし独学で成功した人は、助言者・練習環境・モニターを自力で集めています。一番怖いのは、間違った癖を「合ってる」と思い込んだまま積み上げることです。</p></details>
     <details><summary>どのくらいで仕事にできますか？</summary><p>KAGEROUの標準ルートで、約1年です。「3ヶ月でプロ」とは言いません。だから、順番を間違えない設計が要ります。※期間は標準例。練習量により個人差があります。</p></details>
-    <details><summary>ぶっちゃけ、いくら稼げますか？</summary><p>所属彫師の月売上は平均70万円。トップは200万円近く、時給契約で月25万円という働き方の人もいます。※KAGEROUスタジオ所属彫師の売上実績です（受講の成果を保証するものではありません）。売上であり手取りではありません。</p></details>
+    <details><summary>ぶっちゃけ、いくら稼げますか？</summary><p>所属彫師の月収・手取りは平均70万円、初月25万円の実例があります。トップの月売上は200万円近くです。</p></details>
     <details><summary>受講料は、正直高くないですか？</summary><p>安くないです。だから説明会では、総額も分割（月2万円台から）も隠さず話し、回収の設計まで一緒に考えます。数字を見てから判断してください。</p></details>
     <details><summary>卒業したあと、どうなりますか？</summary><p>道は1本ではありません。KAGEROUの所属審査、他店への応募、個人での活動。卒業生から所属に進んだ人もいます。※所属には審査があります。採用を保証するものではありません。</p></details>
     <details><summary>タトゥーの世界は怖くないですか？</summary><p>——と、よく言われます。実際は、初めてタトゥーを入れるお客様も多い明るいスタジオです。説明会で、この空気ごと確かめてください。</p></details>
